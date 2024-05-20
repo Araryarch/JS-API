@@ -1,12 +1,13 @@
 const getWeatherForecast = async (cityName) => {
   try {
+    const APIKEY = process.env.APIKEY;
     const response = await fetch(
       `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3`,
       {
         method: 'GET',
         headers: {
           'X-Rapidapi-Host': 'weatherapi-com.p.rapidapi.com',
-          'X-Rapidapi-Key': process.env.APIKEY,
+          'X-Rapidapi-Key': APIKEY,
         },
       }
     );
